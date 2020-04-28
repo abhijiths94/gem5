@@ -1,0 +1,19 @@
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Apr 21 2020 23:45:27
+gem5 started Apr 23 2020 20:15:35
+gem5 executing on abso-thinkpad, pid 1431
+command line: ./build/ALPHA/gem5.opt --debug-flags=HWPrefetch --outdir=m5out/test ./configs/example/fs.py --cpu-type=TimingSimpleCPU -n 4 --kernel=/home/abso/Desktop/SP-20/ECE757/proj/parsec/parsec_austin/binaries/vmlinux --script=/home/abso/Desktop/SP-20/ECE757/proj/parsec/parsec_austin/blackscholes_4c_simsmall_ckpts.rcS --caches --l2cache -F 5000000000 --l1i-hwp-type=StridePrefetcher
+
+!!!!!! degree =  32
+!!!!!! degree =  32
+!!!!!! degree =  32
+!!!!!! degree =  32
+Global frequency set at 1000000000000 ticks per second
+      0: system.tsunami.io.rtc: Real-time clock set to Thu Jan  1 00:00:00 2009
+Switch at instruction count:5000000000
+Switched CPUS @ tick 2581548000
+switching cpus
+**** REAL SIMULATION ****
+Exiting @ tick 8840147500 because user interrupt received
