@@ -50,6 +50,9 @@ from .Caches import *
 from common import ObjectList
 
 def config_cache(options, system):
+
+    print("Creating CoOpBuffer ................ ")
+    system.cb = CoOpBuffer()
     if options.external_memory_system and (options.caches or options.l2cache):
         print("External caches and internal caches are exclusive options.\n")
         sys.exit(1)
@@ -164,6 +167,7 @@ def config_cache(options, system):
                           "the current l1i has a default Hardware Prefetcher",
                           "of type", type(icache.prefetcher), ", using the",
                           "specified by the flag option.")
+                
                 icache.prefetcher = hwpClass(degree=4)
                 icache.prefetcher.on_inst = True
                 icache.prefetcher.on_miss = True

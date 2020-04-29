@@ -1,0 +1,7 @@
+Import('*')
+
+DebugFlag('Coop')
+
+
+SimObject('CoOpBuffer.py')
+Source('co_op_buffer.cc')

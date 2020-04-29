@@ -12,11 +12,24 @@
 #include "params/TestPF.hh"
 
 
+int gl_buf[4] = { 0, 0, 0, 0};
+int count = 0;
+
 TestPF::TestPF(const TestPFParams *p)
     : QueuedPrefetcher(p),
-      degree(p->degree)
+    degree(p->degree)
 {
+    buf = gl_buf;
     printf("TESTPF !!!! Creating TestPF prefetcher ..........................\n");
+    
+    for(int i = 0; i < 4 ; i++)
+    {
+        printf("TESTPF %d !!!! %d\n", count, buf[i]);
+    }
+
+    buf[count] = 90 + count;
+    count = count + 1;
+
 }
 
 void

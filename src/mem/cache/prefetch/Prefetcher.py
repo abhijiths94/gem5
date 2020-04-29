@@ -171,7 +171,8 @@ class TestPF(QueuedPrefetcher):
     type = 'TestPF'
     cxx_class = 'TestPF'
     cxx_header = "mem/cache/prefetch/testpf.hh"
-    
+
+    #buf = Param.System(Parent.any, "Common buffer")
     degree = Param.Int(4, "Number of prefetches to generate")
 
 class TaggedPrefetcher(QueuedPrefetcher):

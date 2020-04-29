@@ -229,7 +229,10 @@ def build_test_system(np):
             not options.fast_forward:
             CpuConfig.config_etrace(TestCPUClass, test_sys.cpu, options)
 
+        print("........... Doing Cache config ............")
         CacheConfig.config_cache(options, test_sys)
+        print("........... Done Cache config ............")
+
 
         MemConfig.config_mem(options, test_sys)
 
@@ -341,10 +344,12 @@ np = options.num_cpus
 
 test_sys = build_test_system(np)
 if len(bm) == 2:
+    print("bm = 2")
     drive_sys = build_drive_system(np)
     root = makeDualRoot(True, test_sys, drive_sys, options.etherdump)
 elif len(bm) == 1 and options.dist:
     # This system is part of a dist-gem5 simulation
+    print("bm = 1 and options set")
     root = makeDistRoot(test_sys,
                         options.dist_rank,
                         options.dist_size,
@@ -356,7 +361,9 @@ elif len(bm) == 1 and options.dist:
                         options.ethernet_linkdelay,
                         options.etherdump);
 elif len(bm) == 1:
+    print("bm = 1")
     root = Root(full_system=True, system=test_sys)
+    
 else:
     print("Error I don't know how to create more than 2 systems.")
     sys.exit(1)
