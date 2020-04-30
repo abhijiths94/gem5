@@ -164,7 +164,7 @@ def config_cache(options, system):
                           "the current l1i has a default Hardware Prefetcher",
                           "of type", type(icache.prefetcher), ", using the",
                           "specified by the flag option.")
-                icache.prefetcher = hwpClass(degree=32, thresh_conf=3)
+                icache.prefetcher = hwpClass(degree=32)
                 icache.prefetcher.on_inst = True
                 icache.prefetcher.on_miss = True
 
